@@ -13,35 +13,73 @@ namespace FreezarService
     public interface IService1
     {
 
-        [OperationContract]
-        string GetData(int value);
+        #region GET Methods
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        [WebInvoke(Method = "GET",
+             ResponseFormat = WebMessageFormat.Json,
+             UriTemplate = "recipes")]
+        IList<Recipe> GetRecipes();
 
-        // TODO: Add your service operations here
-    }
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+             ResponseFormat = WebMessageFormat.Json,
+             BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "recipes/{id}")]
+        Recipe GetRecipe(string id);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+             ResponseFormat = WebMessageFormat.Json,
+             BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "recipes/{id}/name")]
+        string GetRecipeName(string id);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+             ResponseFormat = WebMessageFormat.Json,
+             UriTemplate = "ingredient")]
+        IList<Ingredient> GetIngredients();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+             BodyStyle = WebMessageBodyStyle.Bare,
+             ResponseFormat = WebMessageFormat.Json,
+             UriTemplate = "ingredients/{id}")]
+        Ingredient GetIngredient(string id);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+             ResponseFormat = WebMessageFormat.Json,
+             BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "ingredients/{id}/name")]
+        string GetIngredientName(string id);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "storage/")]
+        IList<Storage> GetStorages
+
+        #endregion
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json,
+             BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "recipes/")]
+        Recipe AddRecipe(Recipe recipe);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "ingreidents/")]
 
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+
     }
 }
