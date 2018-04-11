@@ -18,7 +18,7 @@ namespace FreezarService
         [OperationContract]
         [WebInvoke(Method = "GET",
              ResponseFormat = WebMessageFormat.Json,
-             UriTemplate = "recipes")]
+             UriTemplate = "recipes/")]
         IList<Recipe> GetRecipes();
 
         [OperationContract]
@@ -38,7 +38,7 @@ namespace FreezarService
         [OperationContract]
         [WebInvoke(Method = "GET",
              ResponseFormat = WebMessageFormat.Json,
-             UriTemplate = "ingredient")]
+             UriTemplate = "ingredients/")]
         IList<Ingredient> GetIngredients();
 
         [OperationContract]
@@ -85,7 +85,7 @@ namespace FreezarService
              RequestFormat = WebMessageFormat.Json,
              ResponseFormat = WebMessageFormat.Json,
              BodyStyle = WebMessageBodyStyle.Bare,
-             UriTemplate = "recipe/{id}")]
+             UriTemplate = "recipes/{id}")]
         Recipe UpdateRecipe(string id, Recipe recipe);
 
         [OperationContract]
@@ -106,7 +106,7 @@ namespace FreezarService
              RequestFormat = WebMessageFormat.Json,
              ResponseFormat = WebMessageFormat.Json,
              BodyStyle = WebMessageBodyStyle.Bare,
-             UriTemplate = "recipe/{id}")]
+             UriTemplate = "recipes/{id}")]
         Recipe DeleteRecipe(string id);
 
         [OperationContract]
