@@ -96,6 +96,7 @@
   <ItemGroup>
     <Compile Include="Ingredient.cs" />
     <Compile Include="Recipe.cs" />
+    <Compile Include="Recipe_Ingredience.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

@@ -107,7 +107,7 @@ namespace FreezarService
              ResponseFormat = WebMessageFormat.Json,
              BodyStyle = WebMessageBodyStyle.Bare,
              UriTemplate = "recipe/{id}")]
-        Recipe DeleteRecipe(string id, Recipe recipe);
+        Recipe DeleteRecipe(string id);
 
         [OperationContract]
         [WebInvoke(Method = "DELTE",
@@ -115,7 +115,7 @@ namespace FreezarService
              ResponseFormat = WebMessageFormat.Json,
              BodyStyle = WebMessageBodyStyle.Bare,
              UriTemplate = "ingredients/{id}")]
-        Ingredient DeleteIngredient(string id, Ingredient ingredient);
+        Ingredient DeleteIngredient(string id);
 
 
         #endregion

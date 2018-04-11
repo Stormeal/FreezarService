@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
@@ -85,28 +86,51 @@ namespace FreezarService
 
         public Recipe UpdateRecipe(string id, Recipe recipe)
         {
-            throw new NotImplementedException();
+            int idNumber = int.Parse(id);
+            Recipe exsistingRecipe = Recipies.FirstOrDefault(b => b.RecipeId == idNumber);
+            if (exsistingRecipe == null) webContext.OutgoingResponse.StatusCode = HttpStatusCode.NotFound;
+            exsistingRecipe.Title = recipe.Title;
+            exsistingRecipe.Category = recipe.Category;
+            exsistingRecipe.Cusine = recipe.Cusine;
+            exsistingRecipe.SubCategory = recipe.SubCategory;
+
+            return exsistingRecipe;
         }
 
         public Ingredient UpdateIngredient(string id, Ingredient ingredient)
         {
-            throw new NotImplementedException();
+            int idNumber = int.Parse(id);
+            Ingredient exsistIngredient = Ingredients.FirstOrDefault(b => b.IngredientId == idNumber);
+            if(exsistIngredient == null)webContext.OutgoingResponse.StatusCode = HttpStatusCode.NotFound;
+            exsistIngredient.IsStored = ingredient.IsStored;
+            exsistIngredient.Name = ingredient.Name;
+            exsistIngredient.Department = ingredient.Department;
+            exsistIngredient.DisplayIndex = ingredient.DisplayIndex;
+            exsistIngredient.Expiry = ingredient.Expiry;
+            exsistIngredient.StoredAmount = ingredient.StoredAmount;
+            exsistIngredient.Unit = ingredient.Unit;
+            exsistIngredient.UsuallyOnHand = ingredient.UsuallyOnHand;
+
+            return exsistIngredient;
         }
 
 
-        public Recipe DeleteRecipe(string id, Recipe recipe)
+        public Recipe DeleteRecipe(string id)
         {
-            throw new NotImplementedException();
+            Recipe recipe = GetRecipe(id);
+            if(recipe == null) webContext.OutgoingResponse.StatusCode = HttpStatusCode.NotFound;
+            bool removed = Recipies.Remove(recipe);
+            if(removed) return recipe;
+            return null;
         }
 
-        public Ingredient DeleteIngredient(string id, Ingredient ingredient)
+        public Ingredient DeleteIngredient(string id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Storage DeleteStorage(string id, Storage storage)
-        {
-            throw new NotImplementedException();
+            Ingredient ingredient = GetIngredient(id);
+            if(ingredient== null) webContext.OutgoingResponse.StatusCode = HttpStatusCode.NotFound;
+            bool removed = Ingredients.Remove(ingredient);
+            if(removed) return ingredient;
+            return null;
         }
     }
 }
