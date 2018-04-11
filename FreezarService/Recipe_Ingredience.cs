@@ -12,9 +12,11 @@ namespace FreezarService
         [DataMember]
         public int id { get; set; }
         [DataMember]
-        public Recipe RecipeId { get; set; }
+        public int RecipeId { get; set; }
         [DataMember]
-        public Ingredient IngredientId { get; set; }
+        public int IngredientId { get; set; }
+        [DataMember]
+        public string Unit { get; set; }
         [DataMember]
         public double Quantity { get; set; }
         [DataMember]

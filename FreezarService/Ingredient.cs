@@ -17,9 +17,6 @@ namespace FreezarService
         public bool isHeading { get; set; }
         [DataMember]
         public string Name { get; set; }
-
-        [DataMember]
-        public string Unit { get; set; }
         [DataMember]
         public string Department { get; set; }
         [DataMember]

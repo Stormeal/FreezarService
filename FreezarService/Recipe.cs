@@ -20,7 +20,7 @@ namespace FreezarService
         [DataMember]
         public string SubCategory { get; set; }
         [DataMember]
-        public int StarRating { get; set; }
+        public string Description { get; set; }
 
     }
 }
