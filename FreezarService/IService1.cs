@@ -55,11 +55,7 @@ namespace FreezarService
              UriTemplate = "ingredients/{id}/name")]
         string GetIngredientName(string id);
 
-        [OperationContract]
-        [WebInvoke(Method = "GET",
-             ResponseFormat = WebMessageFormat.Json,
-             UriTemplate = "storage/")]
-        IList<Storage> GetStorages();
+
 
         #endregion
 
@@ -80,13 +76,6 @@ namespace FreezarService
              UriTemplate = "ingreidents/")]
         Ingredient AddIngredient(Ingredient ingredient);
 
-        [OperationContract]
-        [WebInvoke(Method = "POST",
-             RequestFormat = WebMessageFormat.Json,
-             ResponseFormat = WebMessageFormat.Json,
-             BodyStyle = WebMessageBodyStyle.Bare,
-             UriTemplate = "storage/")]
-        Storage AddStorage(Storage storage);
             #endregion
 
         #region PUT METHODS
@@ -107,13 +96,7 @@ namespace FreezarService
              UriTemplate = "ingredients/{id}")]
         Ingredient UpdateIngredient(string id, Ingredient ingredient);
 
-        [OperationContract]
-        [WebInvoke(Method = "PUT",
-             RequestFormat = WebMessageFormat.Json,
-             ResponseFormat = WebMessageFormat.Json,
-             BodyStyle = WebMessageBodyStyle.Bare,
-             UriTemplate = "storage/{id}")]
-        Storage UpdateStorage(string id, Storage storage);
+
             #endregion
 
         #region DELETE METHODS
@@ -134,13 +117,6 @@ namespace FreezarService
              UriTemplate = "ingredients/{id}")]
         Ingredient DeleteIngredient(string id, Ingredient ingredient);
 
-        [OperationContract]
-        [WebInvoke(Method = "DELETE",
-             ResponseFormat = WebMessageFormat.Json,
-             RequestFormat = WebMessageFormat.Json,
-             BodyStyle = WebMessageBodyStyle.Bare,
-             UriTemplate = "storage/{id}")]
-        Storage DeleteStorage(string id, Storage storage);
 
         #endregion
 

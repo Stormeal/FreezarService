@@ -21,5 +21,13 @@ namespace FreezarService
         public string SubCategory { get; set; }
         [DataMember]
         public int StarRating { get; set; }
+        [DataMember]
+        public double Quantity { get; set; }
+        [DataMember]
+        public string DisplayQuantity { get; set; }
+        [DataMember]
+        public double MetricQuantity { get; set; }
+        [DataMember]
+        public string MetricDisplayQuantity { get; set; }
     }
 }

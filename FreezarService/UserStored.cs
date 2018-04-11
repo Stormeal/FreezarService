@@ -7,25 +7,28 @@ using System.Web;
 namespace FreezarService
 {
     [DataContract]
-    public class Storage
+    public class UserStored
     {
         [DataMember]
-        public string Name { get; set; }
+        public string UserId { get; set; }
+
         [DataMember]
-        public string Type { get; set; }
+        public Ingredient IngredientId { get; set; }
+
+        [DataMember]
+        public double Amount { get; set; }
+
+        [DataMember]
+        public DateTime ExpectedUseBy { get; set; }
+
         [DataMember]
         public double Quantity { get; set; }
         [DataMember]
         public string DisplayQuantity { get; set; }
         [DataMember]
-        public string Unit { get; set; }
-        [DataMember]
         public double MetricQuantity { get; set; }
         [DataMember]
         public string MetricDisplayQuantity { get; set; }
-        [DataMember]
-        public string MetricUnit { get; set; }
-        [DataMember]
-        public DateTime ExpectedUseBy { get; set; }
+
     }
 }

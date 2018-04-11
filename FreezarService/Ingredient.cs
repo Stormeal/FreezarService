@@ -17,20 +17,19 @@ namespace FreezarService
         public bool isHeading { get; set; }
         [DataMember]
         public string Name { get; set; }
-        [DataMember]
-        public double Quantity { get; set; }
-        [DataMember]
-        public string DisplayQuantity { get; set; }
+
         [DataMember]
         public string Unit { get; set; }
-        [DataMember]
-        public double MetricQuantity { get; set; }
-        [DataMember]
-        public string MetricDisplayQuantity { get; set; }
         [DataMember]
         public string Department { get; set; }
         [DataMember]
         public bool UsuallyOnHand { get; set; }
+        [DataMember]
+        public bool IsStored { get; set; }
+        [DataMember]
+        public double StoredAmount { get; set; }
+        [DataMember]
+        public int Expiry { get; set; }
 
     }
 }
