@@ -16,6 +16,7 @@ namespace FreezarService
         private static IList<Recipe> Recipies = new List<Recipe>();
         private static IList<Ingredient> Ingredients = new List<Ingredient>();
         private static IList<Ingredient> Storages = new List<Ingredient>();
+        private static IList<Recipe_Ingredience>RecipeIngredients = new List<Recipe_Ingredience>();
 
         private static int _nextId = 100001;
 
@@ -147,9 +148,36 @@ namespace FreezarService
                 IngredientId = 1,
                 DisplayQuantity = "1/3",
                 Unit = "cup",
-
-                
+                MetricDisplayQuantity = 79,
+                MetricQuantity = 79,
+                Quantity = 0.333,
+                MetricUnit = "ml"
             };
+            RecipeIngredients.Add(firstRecipeIngredience);
+            RecipeIngredients.Add(new Recipe_Ingredience
+            {
+                id = 2,
+                RecipeId = 2,
+                IngredientId = 2,
+                DisplayQuantity = "1/4",
+                Unit = "cup",
+                MetricDisplayQuantity = 59,
+                MetricQuantity = 59,
+                Quantity = 0.25,
+                MetricUnit = "ml"
+            });
+            RecipeIngredients.Add(new Recipe_Ingredience
+            {
+                id = 3,
+                RecipeId = 2,
+                IngredientId = 3,
+                DisplayQuantity = "1/3",
+                Unit = "cup",
+                MetricDisplayQuantity = 79,
+                MetricQuantity = 79,
+                Quantity = 0.333,
+                MetricUnit = "ml"
+            });
         }
 
         public IList<Recipe> GetRecipes()

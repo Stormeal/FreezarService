@@ -24,6 +24,8 @@ namespace FreezarService
         [DataMember]
         public double MetricQuantity { get; set; }
         [DataMember]
-        public string MetricDisplayQuantity { get; set; }
+        public double MetricDisplayQuantity { get; set; }
+        [DataMember]
+        public string MetricUnit { get; set; }
     }
 }
