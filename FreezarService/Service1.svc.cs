@@ -24,6 +24,8 @@ namespace FreezarService
 
         static Service1()
         {
+            #region Recipes
+
             Recipe firstRecipe = new Recipe
             {
                 RecipeId = 1,
@@ -34,14 +36,18 @@ namespace FreezarService
             };
             Recipies.Add(firstRecipe);
             Recipies.Add(new Recipe
-                {
-                    RecipeId = 2,
-                    Title = "Teriyaki Chicken",
-                    Category = "Main Dish",
-                    Cusine = "Japanese",
-                    SubCategory = "Grill and BBQ",
-                    Description = "Great basic Chicken Teriyaki recipe. Why use the bottled stuff when the make-it-yourself marinade is easy and so much tastier?"
+            {
+                RecipeId = 2,
+                Title = "Teriyaki Chicken",
+                Category = "Main Dish",
+                Cusine = "Japanese",
+                SubCategory = "Grill and BBQ",
+                Description = "Great basic Chicken Teriyaki recipe. Why use the bottled stuff when the make-it-yourself marinade is easy and so much tastier?"
             });
+
+            #endregion
+
+            #region Ingredients
 
             Ingredient firstIngredient = new Ingredient
             {
@@ -141,6 +147,10 @@ namespace FreezarService
                 UsuallyOnHand = false
             });
 
+            #endregion
+
+            #region Recipe Ingrediences
+
             Recipe_Ingredience firstRecipeIngredience = new Recipe_Ingredience
             {
                 id = 1,
@@ -178,6 +188,56 @@ namespace FreezarService
                 Quantity = 0.333,
                 MetricUnit = "ml"
             });
+            RecipeIngredients.Add(new Recipe_Ingredience
+            {
+                id = 4,
+                RecipeId = 3,
+                IngredientId = 4,
+                DisplayQuantity = "1 1/2",
+                Unit = "cup",
+                MetricDisplayQuantity = 22,
+                MetricQuantity = 22,
+                Quantity = 1.5,
+                MetricUnit = "ml"
+            });
+            RecipeIngredients.Add(new Recipe_Ingredience
+            {
+                id = 5,
+                RecipeId = 4,
+                IngredientId = 5,
+                DisplayQuantity = "1",
+                Unit = "cup",
+                MetricDisplayQuantity = 15,
+                MetricQuantity = 15,
+                Quantity = 1,
+                MetricUnit = "ml"
+            });
+            RecipeIngredients.Add(new Recipe_Ingredience
+            {
+                id = 6,
+                RecipeId = 5,
+                IngredientId = 6,
+                DisplayQuantity = "4",
+                Unit = null,
+                MetricDisplayQuantity = 4,
+                MetricQuantity = 4,
+                Quantity = 1,
+                MetricUnit = ""
+            });
+            RecipeIngredients.Add(new Recipe_Ingredience
+            {
+                id = 7,
+                RecipeId = 6,
+                IngredientId = 7,
+                DisplayQuantity = null,
+                Unit = null,
+                MetricDisplayQuantity = 0,
+                MetricQuantity = 0,
+                Quantity = 1,
+                MetricUnit = ""
+            });
+
+            #endregion
         }
 
         public IList<Recipe> GetRecipes()
