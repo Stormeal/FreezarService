@@ -32,7 +32,8 @@ namespace FreezarService
                 Title = "Lasagna",
                 Category = "Main Dish",
                 Cusine = "Italian",
-                Description = "Great Lasagna recipe. Why use bottled stuff when you can make it yourself."
+                Description = "Great Lasagna recipe. Why use bottled stuff when you can make it yourself.",
+                pic_url = "http://assets.kraftfoods.com/recipe_images/opendeploy/502447_1_1_retail-274041f785c231074b544b5a450fa55d9ad00cde_642x428.jpg"
             };
             Recipies.Add(firstRecipe);
             Recipies.Add(new Recipe
@@ -42,7 +43,8 @@ namespace FreezarService
                 Category = "Main Dish",
                 Cusine = "Japanese",
                 SubCategory = "Grill and BBQ",
-                Description = "Great basic Chicken Teriyaki recipe. Why use the bottled stuff when the make-it-yourself marinade is easy and so much tastier?"
+                Description = "Great basic Chicken Teriyaki recipe. Why use the bottled stuff when the make-it-yourself marinade is easy and so much tastier?",
+                pic_url = "https://static01.nyt.com/images/2016/05/28/dining/28COOKING-CHICKEN-TERIYAKI1/28COOKING-CHICKEN-TERIYAKI1-videoSixteenByNineJumbo1600.jpg"
             });
 
             #endregion

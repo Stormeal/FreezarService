@@ -21,6 +21,8 @@ namespace FreezarService
         public string SubCategory { get; set; }
         [DataMember]
         public string Description { get; set; }
+        [DataMember]
+        public string pic_url { get; set; }
 
     }
 }
